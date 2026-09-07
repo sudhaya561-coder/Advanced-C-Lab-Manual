@@ -1,7 +1,7 @@
-EXP NO:6 C PROGRAM PRINT THE LOWERCASE ENGLISH WORD CORRESPONDING TO THE NUMBER
-Aim:
+## EXP NO:6 C PROGRAM PRINT THE LOWERCASE ENGLISH WORD CORRESPONDING TO THE NUMBER
+# Aim:
 To write a C program print the lowercase English word corresponding to the number
-Algorithm:
+# Algorithm:
 1.	Start
 - Initialize an integer variable n.
 2.	Input Validation
@@ -14,30 +14,26 @@ Algorithm:
 -	Default: Print "Greater than 13"
 4.	Exit the program.
  
-Program:
+# Program:
 
-//type your code here
-
-
-
-
-Output:
-
-
-//paste your output here
+<img width="563" height="612" alt="Screenshot 2026-09-02 223205" src="https://github.com/user-attachments/assets/d0b53e65-f8a8-46ae-a376-50ba348ca92a" />
 
 
 
+# Output:
+
+
+<img width="463" height="240" alt="Screenshot 2026-09-02 223218" src="https://github.com/user-attachments/assets/5a1700a3-4a74-4bfc-8c73-4046b08dcb0d" />
 
 
 
-Result:
+# Result:
 Thus, the program is verified successfully
  
-EXP NO:7 C PROGRAM TO PRINT TEN SPACE-SEPARATED INTEGERS     IN A SINGLE  LINE DENOTING THE FREQUENCY OF EACH DIGIT FROM 0 TO 3 .
-Aim:
+## EXP NO:7 C PROGRAM TO PRINT TEN SPACE-SEPARATED INTEGERS     IN A SINGLE  LINE DENOTING THE FREQUENCY OF EACH DIGIT FROM 0 TO 3 .
+# Aim:
 To write a C program to print ten space-separated integers in a single line denoting the frequency of each digit from 0 to 3.
-Algorithm:
+# Algorithm:
 1.	Start
 2.	Declare char array a[50] outer loop for each digit from 0 to 3
 3.	Initialize counter c to 0
@@ -45,31 +41,29 @@ Algorithm:
 5.	Increment h to move to the next digit
 6.	End
  
-Program:
+# Program:
 
-//type your code here
-
-
-
-
-Output:
-
-
-//paste your output here
+<img width="496" height="600" alt="Screenshot 2026-09-02 223922" src="https://github.com/user-attachments/assets/a5532c5b-0d13-4039-94c0-3791bacf54e2" />
 
 
 
 
+# Output:
 
 
-Result:
+<img width="450" height="417" alt="Screenshot 2026-09-02 223929" src="https://github.com/user-attachments/assets/68ccbad9-768a-4df7-be81-9abb19fc5882" />
+
+
+
+
+# Result:
 Thus, the program is verified successfully
 
-EXP NO:8 C PROGRAM TO PRINT ALL OF ITS PERMUTATIONS IN STRICT LEXICOGRAPHICAL ORDER.
-Aim:
+## EXP NO:8 C PROGRAM TO PRINT ALL OF ITS PERMUTATIONS IN STRICT LEXICOGRAPHICAL ORDER.
+# Aim:
 To write a C program to print all of its permutations in strict lexicographical order.
 
-Algorithm:
+# Algorithm:
 1.	Start
 2.	Declare variables s (pointer to an array of strings) and n (number of strings)
 
@@ -82,31 +76,59 @@ Read the number of strings n from the user Dynamically allocate memory for each 
 Free the memory allocated for each string in s Free the memory allocated for s
 7.	End
  
-Program:
+# Program:
 
-//type your code here
+```
+#include <stdio.h>
+#include <string.h>
+void swap(char *a, char *b)
+{
+    char temp = *a;
+    *a = *b;
+    *b = temp;
+}
+void permute(char *str, int left, int right)
+{
+    int i;
+    if (left == right)
+    {
+        printf("%s\n", str);
+        return;
+    }
+    for (i = left; i <= right; i++)
+    {
+        swap(&str[left], &str[i]);
+        permute(str, left + 1, right);
+        swap(&str[left], &str[i]);
+    }
+}
+int main()
+{
+    char str[100];
+    printf("Enter a string: ");
+    scanf("%s", str);
+    permute(str, 0, strlen(str) - 1);
+    return 0;
+}
+```
 
 
 
 
-Output:
-
-
-//paste your output here
-
+# Output:
+<img width="455" height="356" alt="Screenshot 2026-09-02 224226" src="https://github.com/user-attachments/assets/e173c3c4-eddc-4ab5-95c6-c443ee9db076" />
 
 
 
 
-
-Result:
+# Result:
 Thus, the program is verified successfully
  
-EXP NO:9 C PROGRAM PRINT A PATTERN OF NUMBERS FROM 1 TO N AS
+## EXP NO:9 C PROGRAM PRINT A PATTERN OF NUMBERS FROM 1 TO N AS
 SHOWN BELOW.
-Aim:
+# Aim:
 To write a C program to print a pattern of numbers from 1 to n as shown below.
-Algorithm:
+# Algorithm:
 1.	Start
 2.	Declare integer variables n, i, j, min
 3.	Read the value of n from the user
@@ -115,33 +137,52 @@ Algorithm:
 6.	Calculate min as the minimum distance to the borders
 7.	End
  
-Program:
+# Program:
+```
+#include <stdio.h>
+int main()
+{
+    int n, i, j, min, len;
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+    len = n * 2 - 1;
+    for (i = 0; i < len; i++)
+    {
+        for (j = 0; j < len; j++)
+        {
+            min = i;
+            if (j < min)
+                min = j;
+            if (len - 1 - i < min)
+                min = len - 1 - i;
+            if (len - 1 - j < min)
+                min = len - 1 - j;
+            printf("%d", n - min);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
 
-//type your code here
+# Output:
+
+
+<img width="423" height="352" alt="Screenshot 2026-09-02 224359" src="https://github.com/user-attachments/assets/c26ac588-b152-4a24-9183-4562976de1cc" />
 
 
 
 
-Output:
-
-
-//paste your output here
-
-
-
-
-
-
-Result:
+# Result:
 Thus, the program is verified successfully
 
-EXP NO:10 C PROGRAM TO FIND A SQUARE  OF NUMBER USING FUNCTION WITHOUT ARGUMENTS WITH RETURN TYPE
+## EXP NO:10 C PROGRAM TO FIND A SQUARE  OF NUMBER USING FUNCTION WITHOUT ARGUMENTS WITH RETURN TYPE
 
-Aim:
+# Aim:
 
 To write a C program that calculates the square of a number using a function that does not take any arguments, but returns the square of the number.
 
-Algorithm:
+# Algorithm:
 
 1.	Start.
 2.	Define a function square() with no parameters. This function will return an integer value.
@@ -154,49 +195,31 @@ o	Return the squared value.
 o	Call the square() function and display the result.
 5.	End.
 
-Program:
+# Program:
+```
+#include <stdio.h>
 
-//type your code here
+int square()
+{
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    return n * n;
+}
+int main()
+{
+    int result;
+    result = square();
+    printf("Square = %d", result);
+    return 0;
+}
+```
+
+# Output:
+
+<img width="481" height="220" alt="Screenshot 2026-09-02 224543" src="https://github.com/user-attachments/assets/9c6ce7d7-7613-4cc3-bc1f-2fdf42fbc208" />
 
 
-
-
-Output:
-
-
-//paste your output here
-
-
-
-
-
-
-Result:
+# Result:
 Thus, the program is verified successfully
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
